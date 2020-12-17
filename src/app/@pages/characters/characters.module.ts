@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersComponent } from './characters.component';
-import { CardModule } from 'src/app/@core/components/card/card.module';
+import { CardModule } from 'src/app/@shared/components/card/card.module';
 
 
 @NgModule({
