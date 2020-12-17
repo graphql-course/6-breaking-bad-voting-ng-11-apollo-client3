@@ -1,3 +1,10 @@
 .card {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
