@@ -1,3 +1,4 @@
+import { VotesService } from './votes.service';
 import { Component, OnInit } from '@angular/core';
 import { ICharacter } from 'src/app/@interfaces/character.interface';
 import { CharactersService } from '../characters/characters.service';
@@ -16,7 +17,8 @@ import { CharactersService } from '../characters/characters.service';
 })
 export class VotesComponent implements OnInit {
   charactersList: Array<ICharacter> = [];
-  constructor(private characterService: CharactersService) { }
+  constructor(private characterService: CharactersService,
+              private votesService: VotesService) { }
 
   ngOnInit(): void {
     this.characterService.list(true).subscribe((result) => {
@@ -28,6 +30,9 @@ export class VotesComponent implements OnInit {
   addVote(id: string) {
     console.log('Voto para', id);
     // Añadir operación para voto
+    this.votesService.add(id).subscribe((result: Array<ICharacter>) => {
+      console.log(result);
+    });
   }
 
 }
