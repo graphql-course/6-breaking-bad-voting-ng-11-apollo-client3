@@ -10,8 +10,9 @@ import { HttpLink } from 'apollo-angular/http';
 import { onError } from '@apollo/client/link/error';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
+import { environment } from 'src/environments/environment';
 
-const uri = 'http://localhost:5012/graphql'; // <-- add the URL of the GraphQL server here
+const uri = environment.url; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
@@ -27,7 +28,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   // Instalar npm install @types/ws -D
   // En este caso, cuando inicializamos, comprobamos que hace correctamente la conexión
   const ws = new WebSocketLink({
-    uri: `ws://localhost:5012/graphql`,
+    uri: environment.ws,
     options: {
       reconnect: true,
     },
