@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICharacter } from 'src/app/@interfaces/character.interface';
+import { CharactersService } from '../characters/characters.service';
 // https://valor-software.com/ng2-charts/
 // Instalar librería siguiendo los pasos
 // Crear el componente para el gráfico
@@ -13,10 +15,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./votes.component.css']
 })
 export class VotesComponent implements OnInit {
-
-  constructor() { }
+  charactersList: Array<ICharacter> = [];
+  constructor(private characterService: CharactersService) { }
 
   ngOnInit(): void {
+    this.characterService.list(true).subscribe((result) => {
+      this.charactersList = result;
+      console.log(this.charactersList); // comprobar que solo viene con 3 datos
+    });
   }
 
 }
