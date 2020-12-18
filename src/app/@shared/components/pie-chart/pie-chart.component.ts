@@ -31,7 +31,17 @@ export class PieChartComponent implements OnChanges{
   public pieChartLegend = true;
   public pieChartColors = [
     {
-      backgroundColor: ['rgba(0,100,255,0.3)', 'rgba(255,0,255,0.3)', 'rgba(0,0,200,0.3)', 'rgba(0,0,225,0.3)', 'rgba(0,1,255,0.3)', 'rgba(0,0,250,0.3)', 'rgba(0,0,253,0.3)', 'rgba(0,0,251,0.3)', 'rgba(0,0,252,0.3)'],
+      backgroundColor: [
+        'rgba(255,0,0,0.3)',
+        'rgba(0,255,0,0.3)',
+        'rgba(0,0,255,0.3)',
+        'rgba(255, 255, 153, 0.3)',
+        'rgba(153, 153, 255, 0.3)',
+        'rgba(0, 51, 102, 0.3)',
+        'rgba(102, 0, 102, 0.3)',
+        'rgba(204, 0, 102, 0.3)',
+        'rgba(153, 51, 51, 0.3)',
+      ],
     },
   ];
 
