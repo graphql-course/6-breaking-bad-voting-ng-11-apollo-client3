@@ -1,3 +1,4 @@
+import { BarChartModule } from './../../@shared/components/bar-chart/bar-chart.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +10,8 @@ import { VotesComponent } from './votes.component';
   declarations: [VotesComponent],
   imports: [
     CommonModule,
-    VotesRoutingModule
+    VotesRoutingModule,
+    BarChartModule
   ]
 })
 export class VotesModule { }
