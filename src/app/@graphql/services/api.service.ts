@@ -19,4 +19,14 @@ export class ApiService {
       return result.data;
     }));
   }
+
+  protected mutation(mutation: DocumentNode, variables: object = {}, context: object = {}) {
+    return this.apollo.mutate({
+      mutation,
+      variables,
+      context
+    }).pipe(map (( result ) => {
+      return result.data;
+    }));
+  }
 }
