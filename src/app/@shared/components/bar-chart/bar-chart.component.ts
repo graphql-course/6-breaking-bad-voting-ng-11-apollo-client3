@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { ICharacter } from 'src/app/@interfaces/character.interface';
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.css']
 })
-export class BarChartComponent implements OnInit {
+export class BarChartComponent implements OnInit, OnChanges{
+  @Input() characters: Array<ICharacter> = [];
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -33,9 +35,13 @@ export class BarChartComponent implements OnInit {
     },
   ];
 
-  constructor() { }
-
   ngOnInit(): void {
+    console.log(this.characters);
+  }
+
+  ngOnChanges(changes: any): void {
+    console.log(changes);
+    this.characters = changes.characters.currentValue;
   }
 
 }
