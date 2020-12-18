@@ -1,7 +1,7 @@
 <p>votes works!</p>
 <div class="row" *ngIf="charactersList">
     <div class="col-lg-9">
-        <app-bar-chart [characters]="charactersList"></app-bar-chart>
+        <app-pie-chart [characters]="charactersList"></app-pie-chart>
     </div>
     <div class="col-lg-3">
         <div *ngFor="let c of charactersList"class="col-lg-12">

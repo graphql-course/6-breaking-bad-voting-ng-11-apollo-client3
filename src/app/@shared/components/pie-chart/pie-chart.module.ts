@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BarChartComponent } from './bar-chart.component';
+import { PieChartComponent } from './pie-chart.component';
 import { ChartsModule } from 'ng2-charts';
 
 
 
 @NgModule({
-  declarations: [BarChartComponent],
+  declarations: [PieChartComponent],
   imports: [
     CommonModule, ChartsModule
   ],
-  exports: [BarChartComponent]
+  exports: [PieChartComponent]
 })
-export class BarChartModule { }
+export class PieChartModule { }

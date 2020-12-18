@@ -4,11 +4,11 @@ import { CharactersService } from '../characters/characters.service';
 // https://valor-software.com/ng2-charts/
 // Instalar librería siguiendo los pasos
 // Crear el componente para el gráfico
-// ng g m @shared/components/bar-chart && ng g c @shared/components/bar-chart --skip-tests
-// Añadir "BarChartModule" dentro de votes.module.ts
+// ng g m @shared/components/pie-chart && ng g c @shared/components/pie-chart --skip-tests
+// Añadir "PieChartModule" dentro de votes.module.ts
 // Añadir "ChartsModule" dentro de bar-chart.module.ts
 // Añadir lo relacionado a pie-chart, el ejemplo para tener la gráfica
-// en votes.component.html, añadir <app-bar-chart></app-bar-chart>
+// en votes.component.html, añadir <app-pie-chart></app-pie-chart>
 @Component({
   selector: 'app-votes',
   templateUrl: './votes.component.html',

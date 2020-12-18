@@ -1,4 +1,4 @@
-import { BarChartModule } from './../../@shared/components/bar-chart/bar-chart.module';
+import { PieChartModule } from '../../@shared/components/pie-chart/pie-chart.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { VotesComponent } from './votes.component';
   imports: [
     CommonModule,
     VotesRoutingModule,
-    BarChartModule
+    PieChartModule
   ]
 })
 export class VotesModule { }
