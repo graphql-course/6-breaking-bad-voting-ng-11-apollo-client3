@@ -25,4 +25,8 @@ export class VotesComponent implements OnInit {
     });
   }
 
+  addVote(id: string) {
+    console.log('Voto para', id);
+  }
+
 }
