@@ -1,3 +1,6 @@
+<h2>Lista de personajes</h2>
+<hr>
+<img src="./../../../assets/img/loding2.gif" class="loading"/>
 <div class="row" *ngIf="charactersList">
     <div *ngFor="let character of charactersList" class="col-lg-4">
         <app-card [character]="character"></app-card>
