@@ -9,3 +9,13 @@ export const CHANGE_VOTE = gql`
     }
   }
 `;
+
+export const CHANGE_VOTES = gql`
+  subscription{
+    changeVotes {
+      id
+      name
+      votes
+    }
+  }
+`;

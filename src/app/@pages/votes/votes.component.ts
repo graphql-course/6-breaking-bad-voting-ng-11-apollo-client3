@@ -25,6 +25,8 @@ export class VotesComponent implements OnInit {
       this.charactersList = result;
       console.log(this.charactersList); // comprobar que solo viene con 3 datos
     });
+
+    this.votesService.changeVotesListener().subscribe();
   }
 
   addVote(id: string) {
