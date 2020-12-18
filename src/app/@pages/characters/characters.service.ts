@@ -13,14 +13,15 @@ export class CharactersService extends ApiService{
     super(apollo);
   }
 
-  list() {
-    return this.query(GET_CHARACTERS).pipe(map(( result: any) => {
+  list(skip: boolean = false) {
+    return this.query(GET_CHARACTERS, { skip } ).pipe(map(( result: any) => {
       return result.characters;
     }));
   }
 
   get(id: string) {
-    return this.query(GET_CHARACTER, { id }).pipe(map(( result: any) => {
+    const skip = false;
+    return this.query(GET_CHARACTER, { id, skip }).pipe(map(( result: any) => {
       return result.character;
     }));
   }

@@ -6,11 +6,11 @@ export const CHARACTER_OBJECT = gql`
   fragment CharacterObject on Character {
     id
     name
-    actor
-    description
-    total_episodes
-    photo
+    actor @skip(if: $skip)
+    description @skip(if: $skip)
+    total_episodes @skip(if: $skip)
+    photo @skip(if: $skip)
     votes
-    url
+    url @skip(if: $skip)
   }
 `;

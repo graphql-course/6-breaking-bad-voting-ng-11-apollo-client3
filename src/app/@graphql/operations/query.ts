@@ -5,7 +5,7 @@ import { gql } from 'apollo-angular';
 import { CHARACTER_OBJECT } from './fragment';
 
 export const GET_CHARACTERS = gql`
-  {
+  query list($skip: Boolean!){
     characters {
       ...CharacterObject
     }
@@ -14,7 +14,7 @@ export const GET_CHARACTERS = gql`
 `;
 
 export const GET_CHARACTER = gql`
-  query getCharacter($id: ID!) {
+  query getCharacter($id: ID!, $skip: Boolean!) {
     character(id: $id) {
       ...CharacterObject
     }
