@@ -17,13 +17,16 @@ import { CharactersService } from '../characters/characters.service';
 })
 export class VotesComponent implements OnInit {
   charactersList: Array<ICharacter> = [];
+  loading = false;
   constructor(private characterService: CharactersService,
               private votesService: VotesService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.characterService.list(true).subscribe((result) => {
       this.charactersList = result;
       console.log(this.charactersList); // comprobar que solo viene con 3 datos
+      setInterval(() => this.loading = false, 600);
     });
 
     this.votesService.changeVotesListener().subscribe();

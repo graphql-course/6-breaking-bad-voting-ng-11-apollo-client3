@@ -15,15 +15,18 @@ export class DetailsComponent implements OnInit {
     name: '',
     votes: 0
   };
+  loading = false;
   constructor(private router: ActivatedRoute,
               private charactersService: CharactersService,
               private votesService: VotesService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.router.params.subscribe((params) => {
       const id = params.id;
       this.charactersService.get(id).subscribe((result) => {
         this.character = result;
+        setInterval(() => this.loading = false, 600);
       });
       this.votesService.changeSelectVoteListener(id).subscribe();
     });

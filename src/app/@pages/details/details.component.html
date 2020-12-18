@@ -1,7 +1,7 @@
 <!-- https://startbootstrap.com/snippets "Bootstrap snippets"-->
-
+<app-loading *ngIf="loading"></app-loading>
 <!-- Portfolio Item Row -->
-<div class="row mt-4">
+<div class="row mt-4" *ngIf="!loading">
   <div class="col-md-5">
     <img class="img-fluid" [src]="character.photo" alt="" />
   </div>

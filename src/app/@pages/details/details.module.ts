@@ -1,3 +1,4 @@
+import { LoadingModule } from 'src/app/@shared/components/loading/loading.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +10,8 @@ import { DetailsComponent } from './details.component';
   declarations: [DetailsComponent],
   imports: [
     CommonModule,
-    DetailsRoutingModule
+    DetailsRoutingModule,
+    LoadingModule
   ]
 })
 export class DetailsModule { }
