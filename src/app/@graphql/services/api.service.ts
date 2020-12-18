@@ -29,4 +29,15 @@ export class ApiService {
       return result.data;
     }));
   }
+
+  protected subscription(subscription: DocumentNode, variables: object = {}) {
+    return this.apollo.subscribe({
+      query: subscription,
+      variables
+    }).pipe(
+      map((result) => {
+        return result.data;
+      })
+    );
+  }
 }
