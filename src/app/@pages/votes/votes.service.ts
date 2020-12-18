@@ -1,3 +1,4 @@
+import { CHANGE_VOTE } from './../../@graphql/operations/subscriptions';
 import { ADD_VOTE } from './../../@graphql/operations/mutation';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
@@ -19,5 +20,13 @@ export class VotesService extends ApiService{
         return result.addVote;
       }
     ));
+  }
+
+  changeSelectVoteListener(id: string) {
+    return this.subscription(CHANGE_VOTE, { id }).pipe(
+      map((result: any) => {
+        return result.changeVote;
+      })
+    );
   }
 }
