@@ -65,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "breaking-bad-votin-ng:build"
+            "browserTarget": "breaking-bad-votin-ng:build",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {

@@ -1,1 +1,22 @@
-<p>details works!</p>
+<h1 class="my-4">
+  {{ character.name }} -
+  <small>{{ character.actor }}</small>
+</h1>
+
+<!-- Portfolio Item Row -->
+<div class="row">
+  <div class="col-md-5">
+    <img class="img-fluid" [src]="character.photo" [alt]="character.name" />
+  </div>
+
+  <div class="col-md-7">
+    <h3 class="my-3">Detalles del personaje</h3>
+    <p>{{ character.description }}</p>
+    <h3 class="my-3">Más detalles</h3>
+    <ul>
+      <li>Votos recibidos: {{ character.votes }} </li>
+      <li>Episodios: {{ character.total_episodes }}</li>
+    </ul>
+    <a [href]="character.url" target="_blank" class="btn btn-info">Más detalles</a>
+  </div>
+</div>
