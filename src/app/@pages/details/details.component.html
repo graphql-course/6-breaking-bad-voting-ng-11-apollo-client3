@@ -17,6 +17,7 @@
       <li>Votos recibidos: {{ character.votes }}</li>
       <li>Episodios: {{ character.total_episodes }}</li>
     </ul>
+    <a class="btn btn-info" (click)="addVote(character.id)"> Votar </a>&nbsp;
     <a [href]="character.url" target="_blank" class="btn btn-info"
       >M&aacute;s informaci&oacute;n</a
     >

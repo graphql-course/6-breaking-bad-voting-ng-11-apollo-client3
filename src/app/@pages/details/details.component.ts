@@ -32,4 +32,8 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  addVote(id: string) {
+    this.votesService.add(id).subscribe();
+  }
+
 }
