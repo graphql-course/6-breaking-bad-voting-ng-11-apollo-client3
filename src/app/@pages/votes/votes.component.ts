@@ -10,13 +10,18 @@ import { VotesService } from './votes.service';
 })
 export class VotesComponent implements OnInit {
   charactersList: Array<ICharacter> = [];
+  loading = false;
   constructor(private characterService: CharactersService,
               private votesService: VotesService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.characterService.list(true).subscribe((result) => {
       this.charactersList = result;
+      setInterval(() => this.loading = false, 450);
     });
+
+    this.votesService.changeVotesListener().subscribe();
   }
 
   addVote(id: string) {

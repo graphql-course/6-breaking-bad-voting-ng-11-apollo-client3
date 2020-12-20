@@ -1,3 +1,4 @@
+import { LoadingModule } from 'src/app/@shared/components/loading/loading.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { PieChartModule } from 'src/app/@shared/components/pie-chart/pie-chart.m
   imports: [
     CommonModule,
     VotesRoutingModule,
-    PieChartModule
+    PieChartModule,
+    LoadingModule
   ]
 })
 export class VotesModule { }

@@ -17,6 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs/internal/operators/map",
+              "subscriptions-transport-ws",
+              "graphql-tag",
+              "zen-observable",
+              "chart.js"
+            ],
             "outputPath": "dist/breaking-bad-votin-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -65,8 +72,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "breaking-bad-votin-ng:build",
-            "disableHostCheck": true
+            "browserTarget": "breaking-bad-votin-ng:build"
           },
           "configurations": {
             "production": {

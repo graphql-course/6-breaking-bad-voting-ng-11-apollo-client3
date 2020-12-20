@@ -1,10 +1,11 @@
-<h1 class="my-4">
+<h2>
   {{ character.name }} -
   <small>{{ character.actor }}</small>
-</h1>
-
+</h2>
+<hr>
+<app-loading *ngIf="loading"></app-loading>
 <!-- Portfolio Item Row -->
-<div class="row">
+<div class="row" *ngIf="!loading">
   <div class="col-md-5">
     <img class="img-fluid" [src]="character.photo" [alt]="character.name" />
   </div>
@@ -17,6 +18,7 @@
       <li>Votos recibidos: {{ character.votes }} </li>
       <li>Episodios: {{ character.total_episodes }}</li>
     </ul>
-    <a [href]="character.url" target="_blank" class="btn btn-info">Más detalles</a>
+    <a [href]="character.url" target="_blank" class="btn btn-info">Más detalles</a>&nbsp;
+    <a (click)="addVote(character.id)" class="btn btn-info">Votar</a>
   </div>
 </div>

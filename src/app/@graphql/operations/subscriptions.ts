@@ -9,3 +9,12 @@ export const CHANGE_VOTE = gql`
   }
   ${CHARACTER_OBJECT}
 `;
+
+export const CHANGE_VOTES = gql`
+  subscription changeVotes($skip: Boolean!) {
+    changeVotes {
+      ...CharacterObject
+    }
+  }
+  ${CHARACTER_OBJECT}
+`;
